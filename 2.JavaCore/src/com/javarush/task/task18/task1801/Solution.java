@@ -13,19 +13,21 @@ public class Solution {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String fileName = reader.readLine();
         reader.close();
-        //создаем объект FileInputStream, привязанный к файлу «c:/data.txt».
+        //создаем объект FileInputStream, привязанный к файлу «filename».
         FileInputStream inputStream = new FileInputStream(fileName);
         int data = 0;
 
-        while (inputStream.available() > 0) //пока остались непрочитанные байты
-        {
-            int tmp = inputStream.read(); //прочитать очередной байт
+        //пока остались непрочитанные байты
+        while (inputStream.available() > 0) {
+            //прочитать очередной байт
+            int tmp = inputStream.read();
             if ( tmp > data ) {
                 data = tmp;
             }
         }
-        inputStream.close(); // закрываем поток
-
-        System.out.println(data); //выводим сумму на экран.
+        // закрываем поток
+        inputStream.close();
+        //выводим сумму на экран.
+        System.out.println(data);
     }
 }
