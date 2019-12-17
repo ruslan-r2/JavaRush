@@ -7,8 +7,8 @@ import java.io.*;
 public class Solution {
     public static void main(String[] args) throws IOException {
 
-        String[] arg = {"file.txt"};
-        FileInputStream inputStream = new FileInputStream( arg[0] );
+        //String[] arg = {"file.txt"};
+        FileInputStream inputStream = new FileInputStream( args[0] );
 
         int[] arrByte = new int[Byte.MAX_VALUE*2];
         while ( inputStream.available() > 0 ){
